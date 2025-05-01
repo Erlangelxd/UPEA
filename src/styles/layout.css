@@ -1,0 +1,70 @@
+
+/* src/styles/layout.css */
+
+/* Contenido principal */
+.main-content {
+  display: grid;
+  /* Adjust grid for better large screen layout */
+  grid-template-columns: minmax(250px, 1fr) minmax(600px, 3fr) minmax(280px, 1fr); 
+  gap: 2rem;
+  padding: 2rem 0;
+  min-height: calc(100vh - var(--navbar-height));
+  align-items: start; /* Align items to the top */
+}
+
+.sidebar {
+  background: var(--glass-background);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  height: fit-content; /* Para que no ocupe toda la altura */
+  transition: all 0.3s ease;
+  position: sticky; /* Para que se quede fijo al hacer scroll */
+  top: calc(var(--navbar-height) + 2rem); /* Espacio desde el navbar */
+  z-index: 10; /* Ensure sidebar is above content that might scroll under */
+}
+
+.sidebar:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--glass-shadow);
+}
+
+.content {
+  background: var(--glass-background);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 2rem;
+  animation: fadeIn 0.5s ease-in-out;
+  min-height: 500px; /* Altura mínima para el contenido */
+  /* Remove fixed height if components within define their own */
+  z-index: 5; /* Lower z-index than sidebar */
+  grid-column: 2 / 3; /* Explicitly place content in the middle column */
+}
+
+.widget {
+  background: var(--glass-background);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  height: fit-content;
+  position: sticky;
+  top: calc(var(--navbar-height) + 2rem);
+  z-index: 10; /* Ensure widget is also above scrolling content */
+}
+
+/* Styles for components placed directly in main-content (like Chat, FAQ, etc.) */
+/* These components should span the entire width when sidebar/widget are hidden */
+.main-content > .content-full-width {
+  grid-column: 1 / -1; /* Span all columns */
+  background: var(--glass-background);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 2rem;
+  animation: fadeIn 0.5s ease-in-out;
+  min-height: 500px;
+  z-index: 5;
+}

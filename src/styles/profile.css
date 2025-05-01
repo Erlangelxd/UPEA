@@ -1,0 +1,43 @@
+
+/* src/styles/profile.css */
+
+/* Perfil y elementos de usuario */
+.profile-image-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem; /* Centrado y con margen inferior */
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--color-primary);
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.1); /* Efecto zoom al pasar el ratón */
+}
+
+.profile-image-upload {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(31, 41, 55, 0.9); /* Fondo semi-transparente */
+  padding: 0.75rem;
+  color: var(--color-white);
+  text-align: center;
+  cursor: pointer;
+  opacity: 0; /* Oculto por defecto */
+  transition: opacity 0.3s ease;
+}
+
+.profile-image-container:hover .profile-image-upload {
+  opacity: 1; /* Visible al pasar el ratón sobre el contenedor */
+}

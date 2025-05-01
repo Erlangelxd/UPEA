@@ -1,0 +1,124 @@
+
+/* src/styles/responsive.css */
+
+/* Media Queries */
+
+/* Extra Large Screens */
+@media (min-width: 1600px) {
+  .container {
+      max-width: 1500px; /* Increase max-width for very large screens */
+  }
+  .main-content {
+    /* Adjust grid for even larger screens if needed */
+    grid-template-columns: minmax(300px, 1fr) minmax(700px, 4fr) minmax(320px, 1fr); 
+    gap: 2.5rem; /* Increase gap */
+  }
+}
+
+/* Large Screens (Desktops) */
+@media (max-width: 1400px) {
+  .main-content {
+    /* Kept the flexible grid from layout.css */
+    gap: 1.5rem;
+  }
+}
+
+/* Laptops y tablets grandes */
+@media (max-width: 1200px) {
+  .main-content {
+    /* Switch to 2 columns, make sidebar slightly smaller */
+    grid-template-columns: minmax(200px, 1fr) minmax(500px, 3fr); 
+  }
+  
+  .widget {
+    display: none; /* Hide the right widget column */
+  }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .main-content {
+    grid-template-columns: 1fr; /* Una sola columna */
+    padding: 1rem; /* Reduce padding */
+  }
+  
+  .sidebar {
+    display: none; /* Ocultamos el sidebar */
+  }
+  
+  .nav-links {
+    display: none; /* Ocultamos los links del navbar */
+  }
+
+  .mobile-menu-button {
+    display: block; /* Mostramos el botón del menú móvil */
+  }
+
+  .mobile-menu {
+    display: block; /* Permitimos que el JS controle la visibilidad */
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr; /* Una columna para formularios */
+  }
+
+  .filters {
+    grid-template-columns: 1fr; /* Una columna para filtros */
+  }
+
+  .chat-input {
+    flex-direction: column; /* Stack input and button vertically */
+    gap: 0.5rem;
+  }
+  .chat-input .btn {
+    width: 100%; /* Button takes full width */
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem; /* Menos padding lateral */
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .btn {
+    width: 100%; /* Botones ocupan todo el ancho */
+  }
+
+  .profile-image-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .semester-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust grid for smaller buttons */
+    gap: 0.5rem; /* Reduce gap */
+  }
+}
