@@ -28,7 +28,7 @@ function App() {
           transition={{ duration: 0.5 }}
         >
           <div className="container navbar-content">
-            <Link to="/" className="logo">EduSocial</Link>
+            <Link to="/" className="logo">UPEA SISTEMAS</Link>
             <div className="nav-links">
               <Link to="/" className="nav-link">Inicio</Link>
               <Link to="/events" className="nav-link">Eventos</Link>
