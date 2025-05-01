@@ -7,7 +7,7 @@ function UserProfileSidebar({ user }) {
       <h3>Perfil</h3>
       <div className="card">
         <div className="profile-image-container">
-          <img  alt="Profile avatar" class="profile-image" src="https://images.unsplash.com/photo-1652841190565-b96e0acbae17" />
+          <img  alt="Profile avatar" class="profile-image" src="https://svgcrown.com/file/spiderman/5.png" />
           {/* Overlay for changing photo */}
           <div className="profile-image-upload">
             <label htmlFor="profile-upload" className="cursor-pointer">
